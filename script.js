@@ -116,8 +116,12 @@ function distinctCounts(Arr) {
 console.log("7. Return distinct values and their counts (i.e. the list above becomes 1(3) 3(3) 5(2) 7(1)");
 console.log(distinctCounts(testArray3));
 console.log(distinctCounts(testArray4));
+
 console.assert(JSON.stringify(distinctCounts(testArray3)) === JSON.stringify({14: 2, 132: 2, 2123: 2}),{
     Inputs: "Answer is {14: 2, 132: 2, 2123: 2}", errorMsg: errorMsg 
+});
+console.assert(JSON.stringify(distinctCounts(testArray4)) === JSON.stringify([16000, 18, 16000, 18, 16000, 19, 16000, 18]),{
+    Inputs: "Answer is {18: 3, 19: 1, 16000: 4}", errorMsg: errorMsg 
 });
 
 // 8. Given a string of expressions (only variables, +, and -) and an object describing a 
@@ -156,6 +160,10 @@ if(evaluate("a + b + c - d", { a: 1, b: 7, c: 3, d: 14 }) === -3) {
 
 console.assert(evaluate("a + b + c - d", { a: 1, b: 7, c: 3, d: 14 }) === -2,{
     Inputs: "Answer is -3", errorMsg: errorMsg 
+});
+
+console.assert(evaluate("a + b + c - d", { a: 1, b: 7, c: 3, d: 4 }) === -4,{
+    Inputs: "Answer is 6", errorMsg: errorMsg 
 });
 
 
